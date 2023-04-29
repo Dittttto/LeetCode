@@ -15,15 +15,12 @@ class Solution {
                 if(strs[i].equals(strs[j])){
                     tmp.add(strs[j]);
                     check[j] = true;
-                }else {
-                    if(checkAnagram(strs[i], strs[j])) {
-                        tmp.add(strs[j]);
-                        check[j] = true;
-                    }
+                }else if(checkAnagram(strs[i], strs[j])){
+                    tmp.add(strs[j]);
+                    check[j] = true;
                 }
             }
             
-            Collections.sort(tmp);
             list.add(tmp);
         }
         
@@ -32,8 +29,6 @@ class Solution {
     
     public boolean checkAnagram(String str1, String str2) {
         int[] alph = new int[26];
-        // int[] alph2 = new int[26];
-        
         char[] arr = str1.toCharArray();
         char[] arr2 = str2.toCharArray();
         
