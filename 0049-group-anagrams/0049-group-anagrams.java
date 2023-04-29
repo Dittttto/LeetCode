@@ -31,18 +31,19 @@ class Solution {
     }
     
     public boolean checkAnagram(String str1, String str2) {
+        int[] alph = new int[26];
+        // int[] alph2 = new int[26];
         
-        int[] alph1 = new int[26];
-        int[] alph2 = new int[26];
         char[] arr = str1.toCharArray();
         char[] arr2 = str2.toCharArray();
+        
         for(int i = 0; i < arr.length; i++) {
-            alph1[arr[i] - 'a' ] += 1;
-            alph2[arr2[i] - 'a' ] += 1;
+            alph[arr[i] - 'a' ] -= 1;
+            alph[arr2[i] - 'a' ] += 1;
         }
         
-        for(int i=0; i< alph1.length; i++) {
-            if(alph1[i] != alph2[i]) return false;
+        for(int i=0; i< alph.length; i++) {
+            if(alph[i] != 0) return false;
         }
         
         return true;
