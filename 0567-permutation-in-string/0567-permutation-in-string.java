@@ -26,12 +26,9 @@ class Solution {
             }
             
             while(essentialValid == essential.size()) {
-                System.out.println(right + " : " + left);
                 char ch2 = s2Arr[left];
                 left++;
                 if(essential.get(ch2) != null) {
-                    System.out.println(ch2 + " : " + (int)essential.get(ch2) + " : " + (int)window.get(ch2));
-                    System.out.println(right - left + 1 == essential.size());
                     if(right - left + 1 == s1Arr.length) {
                         return true;
                     }
