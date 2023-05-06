@@ -12,10 +12,6 @@ class Solution {
     
     public int go(String[][] map, int n, int depth) {
         if(depth == map.length) {
-            System.out.println("hello");
-            for(String[] row: map) {
-                System.out.println(Arrays.toString(row));
-            }
             return 1;
         }
         
