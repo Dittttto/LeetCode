@@ -20,7 +20,8 @@ class Solution {
                 
                 if(x < 0 || x >= image.length) continue;
                 if(y < 0 || y >= image[0].length) continue;
-                if(check[x][y] || image[x][y] != origin) continue;
+                if(image[x][y] != origin) continue;
+                if(check[x][y]) continue;
                 q.add(new int[]{x,y});
                 image[x][y] = color;
                 check[x][y] = true;
