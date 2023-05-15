@@ -1,19 +1,13 @@
 class Solution {
     public int maxSubArray(int[] nums) {
-        if(nums.length == 1) return nums[0];
-        
-        int[] dp = new int[nums.length];
-        dp[0] = nums[0];
+        int dp0 = nums[0];
+        int dp1 = 0;
+        int result = dp0;
         for(int i = 1; i< nums.length; i++) {
-            dp[i] = Math.max(nums[i], dp[i-1] + nums[i]);
+            dp1 = Math.max(nums[i], dp0 + nums[i]);
+            dp0 = dp1;
+            result = Math.max(result, dp1);
         }
-        
-        int result = dp[0];
-        System.out.println(Arrays.toString(dp));
-        for(int num: dp) {
-            result = Math.max(result, num);
-        }
-        
         return result;
     }
 }
