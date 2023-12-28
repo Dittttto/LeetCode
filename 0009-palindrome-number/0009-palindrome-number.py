@@ -5,9 +5,7 @@ class Solution:
             return False
         
         number = str(x)
-        isPal = True
-        for i in range(len(number)//2):
-            if(number[i] != number[-1-i]):
-                isPal = False
-                break
-        return  isPal
+        numberArr = list(number)
+        numberArrReverse = numberArr[::-1]
+        
+        return  numberArr == numberArrReverse
